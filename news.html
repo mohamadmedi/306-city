@@ -58,7 +58,7 @@ async function loadNews() {
             card.className = "news-card";
 if (item.image) {
     const img = document.createElement("img");
-    img.src = item.image;
+    img.src = new URL(item.image, document.baseURI).href;
     img.alt = item.title || "News image";
     img.className = "news-image";
     card.appendChild(img);
