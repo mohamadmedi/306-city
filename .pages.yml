@@ -1,0 +1,31 @@
+media:
+  - name: images
+    label: Images
+    input: public/images
+    output: /images
+
+content:
+  - name: news
+    label: News
+    path: news
+    type: collection
+    filename: "{year}-{month}-{day}-{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: date
+        label: Date
+        type: date
+        required: true
+
+      - name: image
+        label: Image
+        type: image
+
+      - name: body
+        label: Content
+        type: rich-text
+        required: true
