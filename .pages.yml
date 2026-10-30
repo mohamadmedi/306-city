@@ -7,9 +7,10 @@ media:
 content:
   - name: news
     label: News
-    path: news
-    type: collection
-    filename: "{year}-{month}-{day}-{primary}.md"
+    type: file
+    path: data/news.json
+    format: json
+    list: true
     fields:
       - name: title
         label: Title
@@ -23,7 +24,7 @@ content:
 
       - name: image
         label: Image
-        type: image
+        type: string
 
       - name: body
         label: Content
