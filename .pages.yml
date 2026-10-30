@@ -18,7 +18,7 @@ content:
 
       - name: image
         label: Image
-        type: string
+        type: image
 
       - name: body
         label: Content
