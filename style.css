@@ -498,3 +498,16 @@ footer {
     background: #1686bd;
     transform: translateY(-2px);
 }
+.tutorial-video {
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tutorial-video video {
+    width: 100%;
+    display: block;
+    background: #000;
+}
