@@ -1,9 +1,3 @@
-media:
-  - name: images
-    label: Images
-    input: public/images
-    output: /images
-
 content:
   - name: news
     label: News
