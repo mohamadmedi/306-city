@@ -56,7 +56,13 @@ async function loadNews() {
         news.forEach(item => {
             const card = document.createElement("article");
             card.className = "news-card";
-
+if (item.image) {
+    const img = document.createElement("img");
+    img.src = item.image;
+    img.alt = item.title || "News image";
+    img.className = "news-image";
+    card.appendChild(img);
+}
             const title = document.createElement("h2");
             title.textContent = item.title || "";
 
