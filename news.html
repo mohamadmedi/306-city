@@ -36,7 +36,49 @@
     <footer>
         <p>© 306 City - Minecraft City Server</p>
     </footer>
+<script>
+async function loadNews() {
+    const newsList = document.getElementById("news-list");
 
+    try {
+        const response = await fetch("data/news.json");
+        if (!response.ok) throw new Error("News could not be loaded");
+
+        const news = await response.json();
+
+        newsList.innerHTML = "";
+
+        if (news.length === 0) {
+            newsList.innerHTML = "<p>No news available yet.</p>";
+            return;
+        }
+
+        news.forEach(item => {
+            const card = document.createElement("article");
+            card.className = "news-card";
+
+            const title = document.createElement("h2");
+            title.textContent = item.title || "";
+
+            const date = document.createElement("span");
+            date.className = "news-date";
+            date.textContent = item.date || "";
+
+            const content = document.createElement("p");
+            content.textContent = item.body || "";
+
+            card.append(title, content, date);
+            newsList.appendChild(card);
+        });
+
+    } catch (error) {
+        newsList.innerHTML = "<p>Could not load news. Please try again later.</p>";
+        console.error(error);
+    }
+}
+
+loadNews();
+</script>
 </body>
 
 </html>
