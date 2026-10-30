@@ -1,3 +1,10 @@
+media:
+  - name: images
+    label: Images
+    input: images
+    output: images
+    categories: [image]
+
 content:
   - name: news
     label: News
@@ -19,6 +26,8 @@ content:
       - name: image
         label: Image
         type: image
+        options:
+          media: images
 
       - name: body
         label: Content
